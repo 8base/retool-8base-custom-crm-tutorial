@@ -1,0 +1,4801 @@
+{
+  "tables": [
+    {
+      "id": "5f2c8bb323c7a4000762086c",
+      "name": "Deals",
+      "displayName": "Deals",
+      "isSystem": false,
+      "fields": [
+        {
+          "id": "5f2c8bb323c7a40007620876",
+          "name": "id",
+          "displayName": "ID",
+          "description": null,
+          "fieldType": "ID",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "5f2c8bb323c7a40007620874",
+          "name": "createdAt",
+          "displayName": "Created At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "5f2c8bb323c7a40007620872",
+          "name": "updatedAt",
+          "displayName": "Updated At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "5f2c8bb323c7a4000762086e",
+          "name": "createdBy",
+          "displayName": "Created By",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": {
+            "refFieldName": null,
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "createdById",
+            "refTable": {
+              "id": "5ea6ee0a677fb20009b562a9",
+              "name": "Users"
+            },
+            "refFieldIsList": null,
+            "refFieldIsRequired": null
+          }
+        },
+        {
+          "id": "5f2c8c352fe7d80007bf6d5d",
+          "name": "stage",
+          "displayName": "stage",
+          "description": "The stage of the deal.",
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["lead", "opportunity", "customer"]
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": null,
+          "defaultValue": "lead",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f2c8c602fe7d80007bf9d37",
+          "name": "deal_name",
+          "displayName": "deal_name",
+          "description": "A name for the deal",
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f2c8c8036dbcd0008fc4b65",
+          "name": "amount",
+          "displayName": "amount",
+          "description": "How much the deal size is.",
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 0,
+            "currency": null,
+            "minValue": 0,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f2c8c9eeb2ba500088bc1e2",
+          "name": "email",
+          "displayName": "email",
+          "description": "A contact email for the deal.",
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f2c92ce0d003d000700722d",
+          "name": "touchPoints",
+          "displayName": "TouchPoints",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": true,
+          "isRequired": false,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "deal",
+            "refFieldDisplayName": "Deal",
+            "relationTableName": "DealsTouchPoint",
+            "relationFieldName": "dealAId",
+            "refTable": {
+              "id": "5f2c90aa0d003d0007ff8293",
+              "name": "TouchPoints"
+            },
+            "refFieldIsList": false,
+            "refFieldIsRequired": true
+          }
+        },
+        {
+          "id": "5f31bcfb0d4f8b0007921bf5",
+          "name": "phoneNumber",
+          "displayName": "phoneNumber",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f31bd0f7356c200070d374d",
+          "name": "department",
+          "displayName": "department",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        }
+      ]
+    },
+    {
+      "id": "5f2c90aa0d003d0007ff8293",
+      "name": "TouchPoints",
+      "displayName": "TouchPoints",
+      "isSystem": false,
+      "fields": [
+        {
+          "id": "5f2c90aa0d003d0007ff829d",
+          "name": "id",
+          "displayName": "ID",
+          "description": null,
+          "fieldType": "ID",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "5f2c90aa0d003d0007ff829b",
+          "name": "createdAt",
+          "displayName": "Created At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "5f2c90aa0d003d0007ff8299",
+          "name": "updatedAt",
+          "displayName": "Updated At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "5f2c90aa0d003d0007ff8295",
+          "name": "createdBy",
+          "displayName": "Created By",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": {
+            "refFieldName": null,
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "createdById",
+            "refTable": {
+              "id": "5ea6ee0a677fb20009b562a9",
+              "name": "Users"
+            },
+            "refFieldIsList": null,
+            "refFieldIsRequired": null
+          }
+        },
+        {
+          "id": "5f2c92ce0d003d0007007230",
+          "name": "deal",
+          "displayName": "Deal",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "touchPoints",
+            "refFieldDisplayName": "TouchPoints",
+            "relationTableName": "DealsTouchPoint",
+            "relationFieldName": "touchPointBId",
+            "refTable": {
+              "id": "5f2c8bb323c7a4000762086c",
+              "name": "Deals"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "5f31bae2acdafa00086bb42c",
+          "name": "contactMedium",
+          "displayName": "ContactMedium",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["Phone", "Email", "In-person"]
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": null,
+          "defaultValue": "Phone",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        }
+      ]
+    },
+    {
+      "id": "5f29df6216ab69000723f874",
+      "name": "Account",
+      "displayName": "Account",
+      "isSystem": false,
+      "fields": [
+        {
+          "id": "5f29df6216ab69000723f876",
+          "name": "id",
+          "displayName": "ID",
+          "description": null,
+          "fieldType": "ID",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f883",
+          "name": "Name",
+          "displayName": "Account Name",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f880",
+          "name": "IsDeleted",
+          "displayName": "Deleted",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f886",
+          "name": "Type",
+          "displayName": "Account Type",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Analyst",
+              "Press",
+              "Competitor",
+              "Prospect",
+              "Customer",
+              "Reseller",
+              "Integrator",
+              "Investor",
+              "Partner",
+              "Other",
+              "Consulting",
+              "Customer - Direct",
+              "Customer - Channel",
+              "Channel Partner / Reseller",
+              "Installation Partner",
+              "Technology Partner"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f889",
+          "name": "BillingStreet",
+          "displayName": "Billing Street",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 10000
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f88c",
+          "name": "BillingCity",
+          "displayName": "Billing City",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f88f",
+          "name": "BillingState",
+          "displayName": "Billing State/Province",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f892",
+          "name": "BillingPostalCode",
+          "displayName": "Billing Zip/Postal Code",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f895",
+          "name": "BillingCountry",
+          "displayName": "Billing Country",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f898",
+          "name": "BillingLatitude",
+          "displayName": "Billing Latitude",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f89b",
+          "name": "BillingLongitude",
+          "displayName": "Billing Longitude",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f89e",
+          "name": "BillingGeocodeAccuracy",
+          "displayName": "Billing Geocode Accuracy",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Address",
+              "NearAddress",
+              "Block",
+              "Street",
+              "ExtendedZip",
+              "Zip",
+              "Neighborhood",
+              "City",
+              "County",
+              "State",
+              "Unknown"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8a1",
+          "name": "ShippingStreet",
+          "displayName": "Shipping Street",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 10000
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8a4",
+          "name": "ShippingCity",
+          "displayName": "Shipping City",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8a7",
+          "name": "ShippingState",
+          "displayName": "Shipping State/Province",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8aa",
+          "name": "ShippingPostalCode",
+          "displayName": "Shipping Zip/Postal Code",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8ad",
+          "name": "ShippingCountry",
+          "displayName": "Shipping Country",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8b0",
+          "name": "ShippingLatitude",
+          "displayName": "Shipping Latitude",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8b3",
+          "name": "ShippingLongitude",
+          "displayName": "Shipping Longitude",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8b6",
+          "name": "ShippingGeocodeAccuracy",
+          "displayName": "Shipping Geocode Accuracy",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Address",
+              "NearAddress",
+              "Block",
+              "Street",
+              "ExtendedZip",
+              "Zip",
+              "Neighborhood",
+              "City",
+              "County",
+              "State",
+              "Unknown"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8b9",
+          "name": "Phone",
+          "displayName": "Account Phone",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8bc",
+          "name": "Fax",
+          "displayName": "Account Fax",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8bf",
+          "name": "AccountNumber",
+          "displayName": "Account Number",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8c2",
+          "name": "Website",
+          "displayName": "Website",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8c5",
+          "name": "PhotoUrl",
+          "displayName": "Photo URL",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8c8",
+          "name": "Sic",
+          "displayName": "SIC Code",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8cb",
+          "name": "Industry",
+          "displayName": "Industry",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Agriculture",
+              "Apparel",
+              "Banking",
+              "Biotechnology",
+              "Chemicals",
+              "Communications",
+              "Construction",
+              "Consulting",
+              "Education",
+              "Electronics",
+              "Energy",
+              "Engineering",
+              "Entertainment",
+              "Environmental",
+              "Finance",
+              "Food & Beverage",
+              "Government",
+              "Healthcare",
+              "Hospitality",
+              "Insurance",
+              "Machinery",
+              "Manufacturing",
+              "Media",
+              "Not for Profit",
+              "Recreation",
+              "Retail",
+              "Shipping",
+              "Technology",
+              "Telecommunications",
+              "Transportation",
+              "Utilities",
+              "Other",
+              "Not For Profit"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8ce",
+          "name": "AnnualRevenue",
+          "displayName": "Annual Revenue",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8d1",
+          "name": "NumberOfEmployees",
+          "displayName": "Employees",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 0,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8d4",
+          "name": "Ownership",
+          "displayName": "Ownership",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["Public", "Private", "Subsidiary", "Other"]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8d7",
+          "name": "TickerSymbol",
+          "displayName": "Ticker Symbol",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8da",
+          "name": "Description",
+          "displayName": "Account Description",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 10000
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8dd",
+          "name": "Rating",
+          "displayName": "Account Rating",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["Hot", "Warm", "Cold"]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8e0",
+          "name": "Site",
+          "displayName": "Account Site",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8e3",
+          "name": "Owner",
+          "displayName": "Owner ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8e6",
+          "name": "CreatedDate",
+          "displayName": "Created Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8e9",
+          "name": "CreatedBy",
+          "displayName": "Created By ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8ec",
+          "name": "LastModifiedDate",
+          "displayName": "Last Modified Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8ef",
+          "name": "LastModifiedBy",
+          "displayName": "Last Modified By ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8f2",
+          "name": "SystemModstamp",
+          "displayName": "System Modstamp",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8f5",
+          "name": "LastActivityDate",
+          "displayName": "Last Activity",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATE"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8f8",
+          "name": "LastViewedDate",
+          "displayName": "Last Viewed Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8fb",
+          "name": "LastReferencedDate",
+          "displayName": "Last Referenced Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f8fe",
+          "name": "Jigsaw",
+          "displayName": "Data.com Key",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f901",
+          "name": "JigsawCompanyId",
+          "displayName": "Jigsaw Company ID",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f904",
+          "name": "CleanStatus",
+          "displayName": "Clean Status",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Matched",
+              "Different",
+              "Acknowledged",
+              "NotFound",
+              "Inactive",
+              "Pending",
+              "SelectMatch",
+              "Skipped"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f907",
+          "name": "AccountSource",
+          "displayName": "Account Source",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Web",
+              "Phone Inquiry",
+              "Partner Referral",
+              "Purchased List",
+              "Other"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f90a",
+          "name": "DunsNumber",
+          "displayName": "D-U-N-S Number",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f90d",
+          "name": "Tradestyle",
+          "displayName": "Tradestyle",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f910",
+          "name": "NaicsCode",
+          "displayName": "NAICS Code",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f913",
+          "name": "NaicsDesc",
+          "displayName": "NAICS Description",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f916",
+          "name": "YearStarted",
+          "displayName": "Year Started",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f919",
+          "name": "SicDesc",
+          "displayName": "SIC Description",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f91c",
+          "name": "DandbCompany",
+          "displayName": "D&B Company ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f91f",
+          "name": "CustomerPriority__c",
+          "displayName": "Customer Priority",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["High", "Low", "Medium"]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f922",
+          "name": "SLA__c",
+          "displayName": "SLA",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["Gold", "Silver", "Platinum", "Bronze"]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f925",
+          "name": "Active__c",
+          "displayName": "Active",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["No", "Yes"]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f928",
+          "name": "NumberofLocations__c",
+          "displayName": "Number of Locations",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 3,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f92b",
+          "name": "UpsellOpportunity__c",
+          "displayName": "Upsell Opportunity",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["Maybe", "No", "Yes"]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f92e",
+          "name": "SLASerialNumber__c",
+          "displayName": "SLA Serial Number",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f931",
+          "name": "SLAExpirationDate__c",
+          "displayName": "SLA Expiration Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATE"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6416ab69000723faf0",
+          "name": "ChildAccounts",
+          "displayName": "ChildAccounts",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": true,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "Parent",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "ChildAccounts",
+            "refTable": {
+              "id": "5f29df6216ab69000723f874",
+              "name": "Account"
+            },
+            "refFieldIsList": false,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "5f29df6416ab69000723fb02",
+          "name": "Contacts",
+          "displayName": "Contacts",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": true,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "Account",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "Contacts",
+            "refTable": {
+              "id": "5f29df6216ab69000723f87a",
+              "name": "Contact"
+            },
+            "refFieldIsList": false,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "5f29df6416ab69000723fb08",
+          "name": "Opportunities",
+          "displayName": "Opportunities",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": true,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "Account",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "Opportunities",
+            "refTable": {
+              "id": "5f29df6216ab69000723f87d",
+              "name": "Opportunity"
+            },
+            "refFieldIsList": false,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "5f29df6416ab69000723fb0b",
+          "name": "MasterRecord",
+          "displayName": "Master Record ID",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "Account_nwk",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "MasterRecordId",
+            "refTable": {
+              "id": "5f29df6216ab69000723f874",
+              "name": "Account"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "5f29df6416ab69000723fb0e",
+          "name": "Parent",
+          "displayName": "Parent Account ID",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "ChildAccounts",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "ParentId",
+            "refTable": {
+              "id": "5f29df6216ab69000723f874",
+              "name": "Account"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "5f29df6216ab69000723f877",
+      "name": "Lead",
+      "displayName": "Lead",
+      "isSystem": false,
+      "fields": [
+        {
+          "id": "5f29df6216ab69000723f879",
+          "name": "id",
+          "displayName": "ID",
+          "description": null,
+          "fieldType": "ID",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f940",
+          "name": "Name",
+          "displayName": "Full Name",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f934",
+          "name": "IsDeleted",
+          "displayName": "Deleted",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f937",
+          "name": "LastName",
+          "displayName": "Last Name",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f93a",
+          "name": "FirstName",
+          "displayName": "First Name",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f93d",
+          "name": "Salutation",
+          "displayName": "Salutation",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Mr",
+              "Mr.",
+              "Ms",
+              "Ms.",
+              "Mrs",
+              "Mrs.",
+              "Dr",
+              "Dr.",
+              "Prof",
+              "Prof."
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f943",
+          "name": "Title",
+          "displayName": "Title",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f946",
+          "name": "Company",
+          "displayName": "Company",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f949",
+          "name": "Street",
+          "displayName": "Street",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 10000
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f94c",
+          "name": "City",
+          "displayName": "City",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f94f",
+          "name": "State",
+          "displayName": "State/Province",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f952",
+          "name": "PostalCode",
+          "displayName": "Zip/Postal Code",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f955",
+          "name": "Country",
+          "displayName": "Country",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f958",
+          "name": "Latitude",
+          "displayName": "Latitude",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f95b",
+          "name": "Longitude",
+          "displayName": "Longitude",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f95e",
+          "name": "GeocodeAccuracy",
+          "displayName": "Geocode Accuracy",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Address",
+              "NearAddress",
+              "Block",
+              "Street",
+              "ExtendedZip",
+              "Zip",
+              "Neighborhood",
+              "City",
+              "County",
+              "State",
+              "Unknown"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f961",
+          "name": "Phone",
+          "displayName": "Phone",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f964",
+          "name": "MobilePhone",
+          "displayName": "Mobile Phone",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f967",
+          "name": "Fax",
+          "displayName": "Fax",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f96a",
+          "name": "Email",
+          "displayName": "Email",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "EMAIL",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f96d",
+          "name": "Website",
+          "displayName": "Website",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f970",
+          "name": "PhotoUrl",
+          "displayName": "Photo URL",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f973",
+          "name": "Description",
+          "displayName": "Description",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 10000
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f976",
+          "name": "LeadSource",
+          "displayName": "Lead Source",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Advertisement",
+              "Employee Referral",
+              "External Referral",
+              "Partner",
+              "Public Relations",
+              "Seminar Internal",
+              "Seminar Partner",
+              "Trade Show",
+              "Web",
+              "Word of mouth",
+              "Other",
+              "Phone Inquiry",
+              "Partner Referral",
+              "Purchased List"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f979",
+          "name": "Status",
+          "displayName": "Status",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Open",
+              "Contacted",
+              "Qualified",
+              "Unqualified",
+              "Rating",
+              "Hot",
+              "Warm",
+              "Cold",
+              "Open - Not Contacted",
+              "Working - Contacted",
+              "Closed - Converted",
+              "Closed - Not Converted"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "Open - Not Contacted",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f97c",
+          "name": "Industry",
+          "displayName": "Industry",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Agriculture",
+              "Apparel",
+              "Banking",
+              "Biotechnology",
+              "Chemicals",
+              "Communications",
+              "Construction",
+              "Consulting",
+              "Education",
+              "Electronics",
+              "Energy",
+              "Engineering",
+              "Entertainment",
+              "Environmental",
+              "Finance",
+              "Food & Beverage",
+              "Government",
+              "Healthcare",
+              "Hospitality",
+              "Insurance",
+              "Machinery",
+              "Manufacturing",
+              "Media",
+              "Not for Profit",
+              "Recreation",
+              "Retail",
+              "Shipping",
+              "Technology",
+              "Telecommunications",
+              "Transportation",
+              "Utilities",
+              "Other",
+              "Not For Profit"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f97f",
+          "name": "Rating",
+          "displayName": "Rating",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["Hot", "Warm", "Cold"]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f982",
+          "name": "AnnualRevenue",
+          "displayName": "Annual Revenue",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f985",
+          "name": "NumberOfEmployees",
+          "displayName": "Employees",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 0,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f988",
+          "name": "Owner",
+          "displayName": "Owner ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f98b",
+          "name": "IsConverted",
+          "displayName": "Converted",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f98e",
+          "name": "ConvertedDate",
+          "displayName": "Converted Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATE"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f991",
+          "name": "IsUnreadByOwner",
+          "displayName": "Unread By Owner",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f994",
+          "name": "CreatedDate",
+          "displayName": "Created Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f997",
+          "name": "CreatedBy",
+          "displayName": "Created By ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f99a",
+          "name": "LastModifiedDate",
+          "displayName": "Last Modified Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f99d",
+          "name": "LastModifiedBy",
+          "displayName": "Last Modified By ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9a0",
+          "name": "SystemModstamp",
+          "displayName": "System Modstamp",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9a3",
+          "name": "LastActivityDate",
+          "displayName": "Last Activity",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATE"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9a6",
+          "name": "LastViewedDate",
+          "displayName": "Last Viewed Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9a9",
+          "name": "LastReferencedDate",
+          "displayName": "Last Referenced Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9ac",
+          "name": "Jigsaw",
+          "displayName": "Data.com Key",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9af",
+          "name": "JigsawContactId",
+          "displayName": "Jigsaw Contact ID",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9b2",
+          "name": "CleanStatus",
+          "displayName": "Clean Status",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Matched",
+              "Different",
+              "Acknowledged",
+              "NotFound",
+              "Inactive",
+              "Pending",
+              "SelectMatch",
+              "Skipped"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9b5",
+          "name": "CompanyDunsNumber",
+          "displayName": "Company D-U-N-S Number",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9b8",
+          "name": "DandbCompany",
+          "displayName": "D&B Company ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9bb",
+          "name": "EmailBouncedReason",
+          "displayName": "Email Bounced Reason",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9be",
+          "name": "EmailBouncedDate",
+          "displayName": "Email Bounced Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9c1",
+          "name": "Individual",
+          "displayName": "Individual ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9c4",
+          "name": "SICCode__c",
+          "displayName": "SIC Code",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9c7",
+          "name": "ProductInterest__c",
+          "displayName": "Product Interest",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["GC1000 series", "GC5000 series", "GC3000 series"]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9ca",
+          "name": "Primary__c",
+          "displayName": "Primary",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["No", "Yes"]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9cd",
+          "name": "CurrentGenerators__c",
+          "displayName": "Current Generator(s)",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9d0",
+          "name": "NumberofLocations__c",
+          "displayName": "Number of Locations",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 3,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6416ab69000723fb11",
+          "name": "MasterRecord",
+          "displayName": "Master Record ID",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "Lead_1qk",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "MasterRecordId",
+            "refTable": {
+              "id": "5f29df6216ab69000723f877",
+              "name": "Lead"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "5f29df6416ab69000723fb14",
+          "name": "ConvertedAccount",
+          "displayName": "Converted Account ID",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "Lead_9pz",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "ConvertedAccountId",
+            "refTable": {
+              "id": "5f29df6216ab69000723f874",
+              "name": "Account"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "5f29df6416ab69000723fb17",
+          "name": "ConvertedContact",
+          "displayName": "Converted Contact ID",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "Lead_au9",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "ConvertedContactId",
+            "refTable": {
+              "id": "5f29df6216ab69000723f87a",
+              "name": "Contact"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "5f29df6416ab69000723fb1a",
+          "name": "ConvertedOpportunity",
+          "displayName": "Converted Opportunity ID",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "Lead_v41",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "ConvertedOpportunityId",
+            "refTable": {
+              "id": "5f29df6216ab69000723f87d",
+              "name": "Opportunity"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "5f29df6216ab69000723f87a",
+      "name": "Contact",
+      "displayName": "Contact",
+      "isSystem": false,
+      "fields": [
+        {
+          "id": "5f29df6216ab69000723f87c",
+          "name": "id",
+          "displayName": "ID",
+          "description": null,
+          "fieldType": "ID",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9df",
+          "name": "Name",
+          "displayName": "Full Name",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9d3",
+          "name": "IsDeleted",
+          "displayName": "Deleted",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9d6",
+          "name": "LastName",
+          "displayName": "Last Name",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9d9",
+          "name": "FirstName",
+          "displayName": "First Name",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9dc",
+          "name": "Salutation",
+          "displayName": "Salutation",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Mr",
+              "Mr.",
+              "Ms",
+              "Ms.",
+              "Mrs",
+              "Mrs.",
+              "Dr",
+              "Dr.",
+              "Prof",
+              "Prof.",
+              "Colonel",
+              "Attn:"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9e2",
+          "name": "OtherStreet",
+          "displayName": "Other Street",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 10000
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9e5",
+          "name": "OtherCity",
+          "displayName": "Other City",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9e8",
+          "name": "OtherState",
+          "displayName": "Other State/Province",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9eb",
+          "name": "OtherPostalCode",
+          "displayName": "Other Zip/Postal Code",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9ee",
+          "name": "OtherCountry",
+          "displayName": "Other Country",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9f1",
+          "name": "OtherLatitude",
+          "displayName": "Other Latitude",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9f4",
+          "name": "OtherLongitude",
+          "displayName": "Other Longitude",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9f7",
+          "name": "OtherGeocodeAccuracy",
+          "displayName": "Other Geocode Accuracy",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Address",
+              "NearAddress",
+              "Block",
+              "Street",
+              "ExtendedZip",
+              "Zip",
+              "Neighborhood",
+              "City",
+              "County",
+              "State",
+              "Unknown"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9fa",
+          "name": "MailingStreet",
+          "displayName": "Mailing Street",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 10000
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723f9fd",
+          "name": "MailingCity",
+          "displayName": "Mailing City",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa00",
+          "name": "MailingState",
+          "displayName": "Mailing State/Province",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa03",
+          "name": "MailingPostalCode",
+          "displayName": "Mailing Zip/Postal Code",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa06",
+          "name": "MailingCountry",
+          "displayName": "Mailing Country",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa09",
+          "name": "MailingLatitude",
+          "displayName": "Mailing Latitude",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa0c",
+          "name": "MailingLongitude",
+          "displayName": "Mailing Longitude",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa0f",
+          "name": "MailingGeocodeAccuracy",
+          "displayName": "Mailing Geocode Accuracy",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Address",
+              "NearAddress",
+              "Block",
+              "Street",
+              "ExtendedZip",
+              "Zip",
+              "Neighborhood",
+              "City",
+              "County",
+              "State",
+              "Unknown"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa12",
+          "name": "Phone",
+          "displayName": "Business Phone",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa15",
+          "name": "Fax",
+          "displayName": "Business Fax",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa18",
+          "name": "MobilePhone",
+          "displayName": "Mobile Phone",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa1b",
+          "name": "HomePhone",
+          "displayName": "Home Phone",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa1e",
+          "name": "OtherPhone",
+          "displayName": "Other Phone",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa21",
+          "name": "AssistantPhone",
+          "displayName": "Asst. Phone",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa24",
+          "name": "Email",
+          "displayName": "Email",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "EMAIL",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa27",
+          "name": "Title",
+          "displayName": "Title",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa2a",
+          "name": "Department",
+          "displayName": "Department",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa2d",
+          "name": "AssistantName",
+          "displayName": "Assistant's Name",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa30",
+          "name": "LeadSource",
+          "displayName": "Lead Source",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Advertisement",
+              "Employee Referral",
+              "External Referral",
+              "Partner",
+              "Public Relations",
+              "Seminar Internal",
+              "Seminar Partner",
+              "Trade Show",
+              "Web",
+              "Word of mouth",
+              "Other",
+              "Phone Inquiry",
+              "Partner Referral",
+              "Purchased List"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa33",
+          "name": "Birthdate",
+          "displayName": "Birthdate",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATE"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa36",
+          "name": "Description",
+          "displayName": "Contact Description",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 10000
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa39",
+          "name": "Owner",
+          "displayName": "Owner ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa3c",
+          "name": "CreatedDate",
+          "displayName": "Created Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa3f",
+          "name": "CreatedBy",
+          "displayName": "Created By ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa42",
+          "name": "LastModifiedDate",
+          "displayName": "Last Modified Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa45",
+          "name": "LastModifiedBy",
+          "displayName": "Last Modified By ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa48",
+          "name": "SystemModstamp",
+          "displayName": "System Modstamp",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa4b",
+          "name": "LastActivityDate",
+          "displayName": "Last Activity",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATE"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa4e",
+          "name": "LastCURequestDate",
+          "displayName": "Last Stay-in-Touch Request Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa51",
+          "name": "LastCUUpdateDate",
+          "displayName": "Last Stay-in-Touch Save Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa54",
+          "name": "LastViewedDate",
+          "displayName": "Last Viewed Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa57",
+          "name": "LastReferencedDate",
+          "displayName": "Last Referenced Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa5a",
+          "name": "EmailBouncedReason",
+          "displayName": "Email Bounced Reason",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa5d",
+          "name": "EmailBouncedDate",
+          "displayName": "Email Bounced Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa60",
+          "name": "IsEmailBounced",
+          "displayName": "Is Email Bounced",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa63",
+          "name": "PhotoUrl",
+          "displayName": "Photo URL",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa66",
+          "name": "Jigsaw",
+          "displayName": "Data.com Key",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa69",
+          "name": "JigsawContactId",
+          "displayName": "Jigsaw Contact ID",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa6c",
+          "name": "CleanStatus",
+          "displayName": "Clean Status",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Matched",
+              "Different",
+              "Acknowledged",
+              "NotFound",
+              "Inactive",
+              "Pending",
+              "SelectMatch",
+              "Skipped"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa6f",
+          "name": "Individual",
+          "displayName": "Individual ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa72",
+          "name": "Level__c",
+          "displayName": "Level",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["Secondary", "Tertiary", "Primary"]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa75",
+          "name": "Languages__c",
+          "displayName": "Languages",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6416ab69000723fb1d",
+          "name": "MasterRecord",
+          "displayName": "Master Record ID",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "Contact_eci",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "MasterRecordId",
+            "refTable": {
+              "id": "5f29df6216ab69000723f87a",
+              "name": "Contact"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "5f29df6416ab69000723fb20",
+          "name": "Account",
+          "displayName": "Account ID",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "Contacts",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "AccountId",
+            "refTable": {
+              "id": "5f29df6216ab69000723f874",
+              "name": "Account"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "5f29df6416ab69000723fb23",
+          "name": "ReportsTo",
+          "displayName": "Reports To ID",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "Contact_w49",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "ReportsToId",
+            "refTable": {
+              "id": "5f29df6216ab69000723f87a",
+              "name": "Contact"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "5f29df6216ab69000723f87d",
+      "name": "Opportunity",
+      "displayName": "Opportunity",
+      "isSystem": false,
+      "fields": [
+        {
+          "id": "5f29df6216ab69000723f87f",
+          "name": "id",
+          "displayName": "ID",
+          "description": null,
+          "fieldType": "ID",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa7e",
+          "name": "Name",
+          "displayName": "Name",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa78",
+          "name": "IsDeleted",
+          "displayName": "Deleted",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa7b",
+          "name": "IsPrivate",
+          "displayName": "Private",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa81",
+          "name": "Description",
+          "displayName": "Description",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 10000
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa84",
+          "name": "StageName",
+          "displayName": "Stage",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Prospecting",
+              "Qualification",
+              "Needs Analysis",
+              "Value Proposition",
+              "Id. Decision Makers",
+              "Perception Analysis",
+              "Proposal/Price Quote",
+              "Negotiation/Review",
+              "Closed Won",
+              "Closed Lost"
+            ]
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa87",
+          "name": "Amount",
+          "displayName": "Amount",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa8a",
+          "name": "Probability",
+          "displayName": "Probability (%)",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 3,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa8d",
+          "name": "ExpectedRevenue",
+          "displayName": "Expected Amount",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa90",
+          "name": "TotalOpportunityQuantity",
+          "displayName": "Quantity",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 18,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa93",
+          "name": "CloseDate",
+          "displayName": "Close Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATE"
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa96",
+          "name": "Type",
+          "displayName": "Opportunity Type",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Existing Business",
+              "New Business",
+              "Existing Customer - Upgrade",
+              "Existing Customer - Replacement",
+              "Existing Customer - Downgrade",
+              "New Customer"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa99",
+          "name": "NextStep",
+          "displayName": "Next Step",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa9c",
+          "name": "LeadSource",
+          "displayName": "Lead Source",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Advertisement",
+              "Employee Referral",
+              "External Referral",
+              "Partner",
+              "Public Relations",
+              "Seminar Internal",
+              "Seminar Partner",
+              "Trade Show",
+              "Web",
+              "Word of mouth",
+              "Other",
+              "Phone Inquiry",
+              "Partner Referral",
+              "Purchased List"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fa9f",
+          "name": "IsClosed",
+          "displayName": "Closed",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723faa2",
+          "name": "IsWon",
+          "displayName": "Won",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723faa5",
+          "name": "ForecastCategory",
+          "displayName": "Forecast Category",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Omitted",
+              "Pipeline",
+              "BestCase",
+              "Forecast",
+              "Closed"
+            ]
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723faa8",
+          "name": "ForecastCategoryName",
+          "displayName": "Forecast Category",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": [
+              "Omitted",
+              "Pipeline",
+              "Best Case",
+              "Commit",
+              "Closed"
+            ]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723faab",
+          "name": "Campaign",
+          "displayName": "Campaign ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723faae",
+          "name": "HasOpportunityLineItem",
+          "displayName": "Has Line Item",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fab1",
+          "name": "Pricebook2",
+          "displayName": "Price Book ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fab4",
+          "name": "Owner",
+          "displayName": "Owner ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fab7",
+          "name": "CreatedDate",
+          "displayName": "Created Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723faba",
+          "name": "CreatedBy",
+          "displayName": "Created By ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fabd",
+          "name": "LastModifiedDate",
+          "displayName": "Last Modified Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fac0",
+          "name": "LastModifiedBy",
+          "displayName": "Last Modified By ID",
+          "description": null,
+          "fieldType": "MISSING_RELATION",
+          "fieldTypeAttributes": {},
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fac3",
+          "name": "SystemModstamp",
+          "displayName": "System Modstamp",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fac6",
+          "name": "LastActivityDate",
+          "displayName": "Last Activity",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATE"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fac9",
+          "name": "FiscalQuarter",
+          "displayName": "Fiscal Quarter",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 0,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723facc",
+          "name": "FiscalYear",
+          "displayName": "Fiscal Year",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 0,
+            "currency": null,
+            "minValue": null,
+            "maxValue": null,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723facf",
+          "name": "Fiscal",
+          "displayName": "Fiscal Period",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fad2",
+          "name": "LastViewedDate",
+          "displayName": "Last Viewed Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fad5",
+          "name": "LastReferencedDate",
+          "displayName": "Last Referenced Date",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fad8",
+          "name": "HasOpenActivity",
+          "displayName": "Has Open Activity",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fadb",
+          "name": "HasOverdueTask",
+          "displayName": "Has Overdue Task",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fade",
+          "name": "DeliveryInstallationStatus__c",
+          "displayName": "Delivery/Installation Status",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "CUSTOM",
+            "listOptions": ["In progress", "Yet to begin", "Completed"]
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fae1",
+          "name": "TrackingNumber__c",
+          "displayName": "Tracking Number",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fae4",
+          "name": "OrderNumber__c",
+          "displayName": "Order Number",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723fae7",
+          "name": "CurrentGenerators__c",
+          "displayName": "Current Generator(s)",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6316ab69000723faea",
+          "name": "MainCompetitors__c",
+          "displayName": "Main Competitor(s)",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "5f29df6416ab69000723fb26",
+          "name": "Account",
+          "displayName": "Account ID",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "Opportunities",
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "AccountId",
+            "refTable": {
+              "id": "5f29df6216ab69000723f874",
+              "name": "Account"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        }
+      ]
+    }
+  ],
+  "version": "0.0.95"
+}
