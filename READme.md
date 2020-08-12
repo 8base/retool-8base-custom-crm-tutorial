@@ -45,7 +45,7 @@ All you're going to need to do is drag the _Deals_ table over the _TouchPoints_ 
 2. Confirm that _Allow multiple TouchPoints per Deal_ is checked in the relationship settings and **not** _Allow multiple Deals per TouchPoint_.
 3. Check the _Deal field is Mandatory_ validation.
 
-![Building a relational data-model for custom CRM](./.assets/creating-relation-deals.gif)
+![Building a relational data-model for custom CRM](.assets/creating-relation-deals.gif)
 
 Nice work so far! We're going to speed it up now since you've already learned how to create tables, add fields, and build relationships between tables.
 
