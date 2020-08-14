@@ -341,7 +341,7 @@ Next Contact
 
 ## Testing the Custom CRM
 
-![completed custom crm with 8base GraphQL backend](./assets/crm-done.png)
+![completed custom crm with 8base GraphQL backend](./.assets/crm-done.png)
 
 You did it! Go ahead and press the play button in the top left of the editor. You can now start creating, editing, and performing other operations on your deals.
 
